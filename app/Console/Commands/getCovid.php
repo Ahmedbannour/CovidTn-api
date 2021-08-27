@@ -44,7 +44,7 @@ class getCovid extends Command
     public function handle()
     {
         $client = new Client();
-        $crawler = $client->request('GET', 'https://news.google.com/covid19/map?hl=fr&mid=%2Fm%2F07fj_&gl=FR&ceid=FR%3Afr&state=4');
+        $crawler = $client->request('GET', 'https://news.google.com/covid19/map?hl=fr&mid=%2Fm%2F07fj_&gl=FR&ceid=FR%3Afr');
         $crawler->filter('.YvL7re')->each(function ($node) {
             $nm =$node->filter('.l3HOY')->eq(0);
             //print $nm->text()."\n";
@@ -59,9 +59,8 @@ class getCovid extends Command
             $pa = new covid();
             $pa->id_ville = $id;
             $pa->nb_cas =0;
-            $pa->nb_ret = 15000;
+            $pa->nb_ret = 124;
             $pa->nb_mort= 0 ;
-
             $pa->save();
         });
         return 0;

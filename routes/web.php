@@ -16,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/pays/add' ,'PaysController@store');
+Route::get('/covid','CovidController@index');
+Route::get('/covid/dataMounth','CovidController@dataMounth');
+Route::get('/contact-us', 'CovidController@contact');
+Route::get('/curves', 'CovidController@curves');
+
+
+

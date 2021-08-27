@@ -19,7 +19,12 @@ class CreateVillesTable extends Migration
             $table->string('nom');
             $table->bigInteger('nb_pop');
             $table->foreign('id_pays')->references('id')->on('pays')->onDelete('cascade');
+            $table->decimal('Latitude', 17, 15);
+            $table->decimal('Longitude', 17, 15);
+
+
             $table->timestamps();
+
 
         });
     }
